@@ -49,7 +49,7 @@ public class BoardController {
 	public String write_view(BoardVO boardVO, Model model) {
 		log.info("write_view()..");
 		
-		return "/board/write_view";
+		return "board/write_view";
 	}
 	@PostMapping("/write")
 	public String write(BoardVO boardVO) {
