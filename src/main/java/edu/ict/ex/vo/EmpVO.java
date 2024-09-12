@@ -18,7 +18,7 @@ public class EmpVO {
 	private String ename;
 	private String job;
 	private int mgr;
-	private Date hiredate;
+	private Date hiredate; //=TimeStamp hiredate(더 디테일함)
 	private int sal;
 	private int comm;
 	private int deptno;
