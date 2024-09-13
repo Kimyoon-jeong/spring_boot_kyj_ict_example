@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import edu.ict.ex.page.Criteria;
 import edu.ict.ex.vo.BoardVO;
 
 
@@ -31,4 +32,12 @@ public interface BoardMapper {
 	
 	//히트수
 	int upHit(BoardVO boardVO);
+	
+	//페이징 관련
+	int getTotalCount(); //전체 게시판 갯수
+	List<BoardVO> getListWithPaging(Criteria cri);
+	
+	
+	
+	
 }

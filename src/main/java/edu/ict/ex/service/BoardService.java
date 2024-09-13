@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import edu.ict.ex.page.Criteria;
 import edu.ict.ex.vo.BoardVO;
 
 
@@ -20,5 +21,9 @@ public interface BoardService {
 	//댓글
 	void writeReply(BoardVO board);
 	
+	//페이징
+	//페이징처리함수
+	 int getTotal();
+	 List<BoardVO> getListWithPaging(Criteria cri);
 	
 }
