@@ -28,4 +28,7 @@ public interface BoardMapper {
 	//댓글관련
 	public void updateShape(BoardVO boardVO); //기존에 있던 게시글을 한칸씩 밀어냄
 	public void insertReply(BoardVO boardVO);
+	
+	//히트수
+	int upHit(BoardVO boardVO);
 }

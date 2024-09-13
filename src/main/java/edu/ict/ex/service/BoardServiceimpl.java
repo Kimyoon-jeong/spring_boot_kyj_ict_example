@@ -24,6 +24,12 @@ public class BoardServiceimpl implements BoardService {
 	@Override
 	public BoardVO get(int bno) {
 		log.info("get()..");
+		
+		BoardVO board = new BoardVO();
+		board.setBid(bno);
+		
+		boardMapper.upHit(board);
+		
 		return boardMapper.read(bno);
 	}
 
@@ -56,6 +62,15 @@ public class BoardServiceimpl implements BoardService {
 		boardMapper.updateShape(board);
 		boardMapper.insertReply(board);
 	}
+
+	@Override
+	public int upHit(BoardVO board) {
+		log.info("upHit()..");
+		
+		return boardMapper.upHit(board);
+	}
+
+
 	
 	
 	
