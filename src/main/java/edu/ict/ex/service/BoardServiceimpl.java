@@ -49,4 +49,15 @@ public class BoardServiceimpl implements BoardService {
 		
 	}
 
+	@Override
+	public void writeReply(BoardVO board) {
+		log.info("writeReply()..");
+		//updateShape가 먼저와야함(비즈니스로직 = 순서있는 기능이 오는 부분=기능이 있는 로직=반드시 서비스단에서 해결)
+		boardMapper.updateShape(board);
+		boardMapper.insertReply(board);
+	}
+	
+	
+	
+
 }

@@ -24,4 +24,8 @@ public interface BoardMapper {
 	
 	//게시판 업데이트
 	int updateBoard(BoardVO boardVO); //객체가 1개일때는 param 적을 필요가 없음
+	
+	//댓글관련
+	public void updateShape(BoardVO boardVO); //기존에 있던 게시글을 한칸씩 밀어냄
+	public void insertReply(BoardVO boardVO);
 }
