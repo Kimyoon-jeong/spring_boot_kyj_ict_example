@@ -16,15 +16,15 @@
         delete from mvc_board where bid=#{bid}
      ]]>
 	</delete>
-
-	<insert id="write">
+	<!-- sql 세미콜론빼기 ;-->
+	<insert id="insertBoard">
 	 <![CDATA[
 	insert into mvc_board (bid, bname, btitle, bcontent, bhit, bgroup, bstep, bindent) 
-	values (mvc_board_seq.nextval, #{bname}, #{btitle}, #{bcontent}, 0, mvc_board_seq.currval, 0, 0)
+	values (mvc_board_seq.nextval, #{board.bname}, #{board.btitle}, #{board.bcontent}, 0, mvc_board_seq.currval, 0, 0)
 	  ]]>
 	</insert>
-
-	<update id="modify">
+	
+	<update id="updateBoard">
 	 <![CDATA[
 		update mvc_board set bname = #{bname}, btitle =#{btitle}, bcontent =#{bcontent} where bid = #{bid}
 	  ]]>

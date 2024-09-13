@@ -55,15 +55,15 @@ public class BoardController {
 	public String write(BoardVO boardVO) {
 		log.info("write()..");
 		
-		boardService.write(boardVO.getBname(),boardVO.getBtitle(),boardVO.getBcontent());
+		boardService.writeBoard(boardVO);
 		
 		return "redirect:/board/list";
 	}
 	@PostMapping("/modify")
 	public String modify(BoardVO boardVO) {
-		log.info("modify()..");
+		log.info("updateBoard()..");
 		
-		boardService.modify(boardVO.getBid(),boardVO.getBname(),boardVO.getBtitle(),boardVO.getBcontent());
+		boardService.updateBoard(boardVO);
 		
 		return "redirect:/board/list";
 	}

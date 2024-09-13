@@ -3,6 +3,7 @@ package edu.ict.ex.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import edu.ict.ex.vo.BoardVO;
 
@@ -16,6 +17,11 @@ public interface BoardMapper {
 	BoardVO read(int bno);
 	
 	int delete(int bid); //int 쓰는이유 게시판 삭제 == 삭제된 갯수 리턴
-	int write(String bname, String btitle, String bcontent);
-	int modify(int bid, String bname, String btitle, String bcontent);
+	
+	//게시판 insert
+	int insertBoard(@Param("board")BoardVO boardVO); //객체를 2개넘길때는 Param을 붙여야함, boardVO를 board객체로 넘기겠다는 뜻 
+	//int insertBoard(@Param("board")BoardVO boardVO,@Param("emp")BoardVO boardVO); //객체를 2개넘길때는 Param을 붙여야함
+	
+	//게시판 업데이트
+	int updateBoard(BoardVO boardVO); //객체가 1개일때는 param 적을 필요가 없음
 }

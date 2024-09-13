@@ -13,7 +13,7 @@ public interface BoardService {
 	BoardVO get(int bno);//bno가 넘어오면 해당 번호를 select해서 BoardVO로 전달
 	
 	int remove(int bid);
-	void write(String bname, String btitle, String bcontent);
-	void modify(int bid, String bname, String btitle, String bcontent);
+	int writeBoard(BoardVO board);
+	int updateBoard(BoardVO board);
 
 }

@@ -37,15 +37,15 @@ public class BoardServiceimpl implements BoardService {
 	}
 
 	@Override
-	public void write(String bname, String btitle, String bcontent) {
-		log.info("write()..");
-		boardMapper.write(bname,btitle,bcontent);
+	public int writeBoard(BoardVO board) {
+		log.info("writeBoard()..");
+		return boardMapper.insertBoard(board);
 	}
 
 	@Override
-	public void modify(int bid, String bname, String btitle, String bcontent) {
-		log.info("modify()..");
-		boardMapper.modify(bid, bname,btitle,bcontent);
+	public int updateBoard(BoardVO board) {
+		log.info("updateBoard()..");
+		return boardMapper.updateBoard(board);
 		
 	}
 
