@@ -65,4 +65,22 @@ public class EmpController {
 		
 		return "emp/list2";
 	}
+	@GetMapping("/list3")
+	public String list3( Model model) {
+		log.info("list3()..");
+		
+
+		model.addAttribute("empList",empService.getEmpDeptList());
+		
+		return "emp/list3";
+	}
+	
+	@GetMapping("/list4")
+	public String list4(Model model) {
+		System.out.println("list4()..");
+		
+		model.addAttribute("empDeptList", empService.getDeptEmpList());
+		
+		return "emp/list4";
+	}
 }

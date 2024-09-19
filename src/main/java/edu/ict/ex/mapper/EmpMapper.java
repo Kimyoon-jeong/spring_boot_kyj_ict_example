@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import edu.ict.ex.page.Criteria;
+import edu.ict.ex.vo.DeptEmpVO;
+
 import edu.ict.ex.vo.EmpVO;
 
 
@@ -14,10 +16,17 @@ import edu.ict.ex.vo.EmpVO;
 public interface EmpMapper {
 	
 	public List<EmpVO>getList();
+	
 	public int insert(EmpVO empVO);
+	
+	public List <EmpVO>getEmpDeptList(); //조인처리 첫번째 방법
+	
+	public List <DeptEmpVO>getDeptEmpList(); //조인처리 두번째 방법
 	
 	//페이징관련
 	int getTotalCount();
 	List<EmpVO> getListWithPaging(Criteria cri);
+	
+	
 	
 }
