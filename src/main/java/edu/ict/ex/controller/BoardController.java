@@ -86,6 +86,7 @@ public class BoardController {
 		
 		return "board/list";
 	}
+	
 	@GetMapping("/list2")
 	public String list2(Criteria criteria, Model model) {
 		log.info("list2()..");

@@ -7,13 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.ict.ex.page.Criteria;
+import edu.ict.ex.page.PageVO;
 import edu.ict.ex.service.DeptService;
 import edu.ict.ex.service.EmpService;
 import edu.ict.ex.vo.DeptVO;
 import edu.ict.ex.vo.EmpVO;
+import lombok.extern.slf4j.Slf4j;
 
 
-
+@Slf4j
 @Controller
 @RequestMapping("/emp")
 public class EmpController {
@@ -51,5 +54,15 @@ public class EmpController {
 		
 		return "redirect:/emp/list";
 	}
-	
+	@GetMapping("/list2")
+	public String list2(Criteria criteria, Model model) {
+		log.info("list2()..");
+		
+		model.addAttribute("empList",empService.getListWithPaging(criteria));
+		
+		int total = empService.getTotal();
+		model.addAttribute("pageMaker",new PageVO(criteria,total));
+		
+		return "emp/list2";
+	}
 }

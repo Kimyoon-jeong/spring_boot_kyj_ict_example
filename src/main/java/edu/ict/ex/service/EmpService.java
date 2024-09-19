@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.ict.ex.mapper.EmpMapper;
+import edu.ict.ex.page.Criteria;
 import edu.ict.ex.repository.EmpDao;
+import edu.ict.ex.vo.BoardVO;
 import edu.ict.ex.vo.EmpVO;
 
 
@@ -30,5 +32,18 @@ public class EmpService {
 		return empMapper.insert(emoVO);
 		
 	}
+
+	public int getTotal() {
+		
+		return empMapper.getTotalCount();
+	}
+
+
+	public List<EmpVO> getListWithPaging(Criteria cri) {
+		
+		return empMapper.getListWithPaging(cri);
+	}
+
+
 	
 }
