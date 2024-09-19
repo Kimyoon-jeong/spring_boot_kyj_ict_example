@@ -51,7 +51,7 @@ public class BoardController {
 	public String write_view(BoardVO boardVO, Model model) {
 		log.info("write_view()..");
 		
-		return "board/write_view";
+		return "/board/write_view";
 	}
 	@PostMapping("/write")
 	public String write(BoardVO boardVO) {
@@ -76,7 +76,7 @@ public class BoardController {
 		model.addAttribute("reply_view",boardService.get(boardVO.getBid()));
 	
 		
-		return "board/reply_view";
+		return "/board/reply_view";
 	}
 	@PostMapping("/reply")
 	public String reply(BoardVO boardVO, Model model) {

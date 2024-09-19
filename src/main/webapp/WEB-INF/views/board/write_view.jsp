@@ -9,7 +9,7 @@
 <body>
    <h1>글작성</h1>
    <table width="500" border="1">
-      <form action="${pageContext.request.contextPath}/board/write" method="post">
+      <form action="${pageContext.request.contextPath}/board/join" method="post">
          <tr>
             <td>이름</td>
             <td><input type="text" name="bname" size="50"></td>      

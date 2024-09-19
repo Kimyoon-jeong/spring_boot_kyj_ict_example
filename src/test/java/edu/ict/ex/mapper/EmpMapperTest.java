@@ -23,5 +23,24 @@ class EmpMapperTest {
 			System.out.println(vo);
 		}
 	}
+	
+	@Test
+	void testInsert() {
+		EmpVO emp =new EmpVO();
+		emp.setEmpno(2000);
+		emp.setEname("홍길동");
+		emp.setJob("CLERK");
+		emp.setMgr(7369);
+		emp.setHiredate2("2024-09-24");
+		emp.setSal(800);
+		emp.setComm(2000);
+		emp.setDeptno(10);
+		
+		mapper.insert(emp);
+		for (EmpVO vo : mapper.getList()) {
+			System.out.println(vo);
+		}
+	}
+	
 
 }
