@@ -6,10 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 import edu.ict.ex.page.Criteria;
 import edu.ict.ex.vo.DeptEmpVO;
-
+import edu.ict.ex.vo.EmpDeptVO;
 import edu.ict.ex.vo.EmpVO;
 
 import edu.ict.ex.vo.SalGradeVO;
+import edu.ict.ex.vo.EmpSalGradeVO;
 import edu.ict.ex.vo.SalgradeDeptEmpVO;
 
 
@@ -19,6 +20,8 @@ import edu.ict.ex.vo.SalgradeDeptEmpVO;
 public interface EmpMapper {
 	
 	
+	
+
 	public List<EmpVO>getList();
 	
 	public int insert(EmpVO empVO);
@@ -27,13 +30,19 @@ public interface EmpMapper {
 	
 	public List <DeptEmpVO>getDeptEmpList(); //조인처리 두번째 방법
 	
+	public List <EmpDeptVO>getEmpOneDeptList(); //조인처리 일대일 처리
+	
 	List<SalGradeVO> getSalEmpList();
+	
+	List<EmpSalGradeVO> getSalEmpList2();
 	
 	//페이징관련
 	int getTotalCount();
 	List<EmpVO> getListWithPaging(Criteria cri);
 
 	public List<SalgradeDeptEmpVO> getSalDeptEmpList();
+
+	public List<EmpSalGradeVO> getEmpSalGradeList();
 	
 	
 	

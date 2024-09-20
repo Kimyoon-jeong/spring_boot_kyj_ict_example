@@ -1,6 +1,6 @@
 package edu.ict.ex.vo;
 
-import java.sql.Date;
+
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -21,4 +21,5 @@ public class SalGradeVO {
 	private int hisal;
 	
 	private List<EmpVO> empList; 
+
 }

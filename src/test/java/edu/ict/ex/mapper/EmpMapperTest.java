@@ -22,6 +22,19 @@ class EmpMapperTest {
    @Autowired
    private EmpMapper mapper;
    
+   //@Disabled
+   @Test
+   void testGetEmpSalGradeList() {
+      System.out.println(mapper.getEmpSalGradeList());
+   }
+   
+   @Disabled
+   @Test
+   void testGetEmpOneDeptList() {
+      System.out.println(mapper.getEmpOneDeptList());
+   }
+   
+   
    @Disabled
    @Test
    void testGetDeptEmpList() {

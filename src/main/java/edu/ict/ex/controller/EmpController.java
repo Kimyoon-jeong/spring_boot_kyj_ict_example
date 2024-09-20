@@ -35,6 +35,8 @@ public class EmpController {
 		return "emp/list";
 	}
 	
+
+	
 	@GetMapping("/insert_view")
 	public String insert_view(Model model) {
 		System.out.println("insert_view()..");
@@ -84,6 +86,15 @@ public class EmpController {
 		return "emp/list4";
 	}
 	
+	@GetMapping("/list5")
+	public String list5(Model model) {
+		System.out.println("list5()..");
+		
+		model.addAttribute("empList", empService.getEmpOneDeptList());
+		
+		return "emp/list5";
+	}
+	
 	@GetMapping("/salgrade")
 	public String salgrade(Model model) {
 		System.out.println("salgrade()..");
@@ -92,6 +103,17 @@ public class EmpController {
 		
 		return "emp/salgrade";
 	}
+	
+	@GetMapping("/salgrade2")
+	public String salgrade2(Model model) {
+		System.out.println("salgrade2()..");
+		
+		model.addAttribute("salEmpList2", empService.getSalEmpList2());
+		
+		return "emp/salgrade2";
+	}
+	
+	
 	@GetMapping("/info")
 	public String info(Model model) {
 		System.out.println("salDeptEmpList()..");
@@ -99,5 +121,14 @@ public class EmpController {
 		model.addAttribute("salDeptEmpList", empService.getSalDeptEmpList());
 		
 		return "emp/info";
+	}
+	
+	@GetMapping("/info2")
+	public String info2(Model model) {
+		System.out.println("info2()..");
+		
+		model.addAttribute("empSalGradeList", empService.getEmpSalGradeList());
+		
+		return "emp/info2";
 	}
 }

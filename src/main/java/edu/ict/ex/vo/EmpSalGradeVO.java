@@ -13,20 +13,18 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class EmpVO {
+public class EmpSalGradeVO {
 	private int empno;
 	private String ename;
 	private String job;
 	private int mgr;
-	private Date hiredate; //=TimeStamp hiredate(더 디테일함)
+	private Date hiredate;
 	private int sal;
 	private int comm;
 	private int deptno;
 	
-	//날짜 input 입력을 위해서
-	private String hiredate2;	
+	//1대1
+	private SalGradeVO salgrade; 
 	
-	private String dname; //부서이름
-	private String loc; //지역
-	
+	private DeptVO dept;
 }

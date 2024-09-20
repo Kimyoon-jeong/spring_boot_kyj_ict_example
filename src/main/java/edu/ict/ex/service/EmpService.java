@@ -9,9 +9,11 @@ import org.springframework.stereotype.Service;
 import edu.ict.ex.mapper.EmpMapper;
 import edu.ict.ex.page.Criteria;
 import edu.ict.ex.vo.DeptEmpVO;
+import edu.ict.ex.vo.EmpDeptVO;
 import edu.ict.ex.vo.EmpVO;
 
 import edu.ict.ex.vo.SalGradeVO;
+import edu.ict.ex.vo.EmpSalGradeVO;
 import edu.ict.ex.vo.SalgradeDeptEmpVO;
 
 
@@ -69,5 +71,21 @@ public class EmpService {
 		return empMapper.getSalDeptEmpList();
 	}
 
-	
+	//EmpDept 일대일 처리
+	public List<EmpDeptVO>  getEmpOneDeptList() {
+		
+		return empMapper.getEmpOneDeptList();
+	}
+
+
+	public List<EmpSalGradeVO>  getSalEmpList2() {
+		
+		return empMapper.getSalEmpList2();
+	}
+
+
+	public List<EmpSalGradeVO> getEmpSalGradeList() {
+		
+		return empMapper.getEmpSalGradeList();
+	}
 }

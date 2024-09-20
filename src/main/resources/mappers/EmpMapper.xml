@@ -35,8 +35,8 @@
         ]]>
 	</select>
 
-	<resultMap id="empMap" type="EmpVO"><!-- resultMap에서 id 속성:중복되면 
-			안된다는 키로 특별한 기능은 없다 -->
+	<resultMap id="empMap" type="EmpVO"><!-- resultMap에서 id 속성:중복되면 안된다는 키로 
+			특별한 기능은 없다 -->
 		<id property="empno" column="empno" />
 		<result property="ename" column="ename" />
 		<result property="job" column="job" />
@@ -62,13 +62,15 @@
         ]]>
 	</select>
 
-	<resultMap id="salMap" type="SalGradeVO"><!-- resultMap에서 id 속성:중복되면 
-			안된다는 키로 특별한 기능은 없다 -->
+	<resultMap id="salMap" type="SalGradeVO"><!-- resultMap에서 id 속성:중복되면 안된다는 키로 
+			특별한 기능은 없다 -->
 		<result property="grade" column="grade" />
 		<result property="losal" column="losal" />
 		<result property="hisal" column="hisal" />
 		<collection property="empList" resultMap="empMap"></collection>
 	</resultMap>
+
+
 
 	<select id="getSalEmpList" resultMap="salMap">
        <![CDATA[
@@ -84,22 +86,22 @@
         ]]>
 	</select>
 
-	<resultMap id="salgradeMapQ" type="salgradeDeptEmpVO"><!-- resultMap에서 
-			id 속성:중복되면 안된다는 키로 특별한 기능은 없다 -->
+	<resultMap id="salgradeMapQ" type="salgradeDeptEmpVO"><!-- resultMap에서 id 속성:중복되면 
+			안된다는 키로 특별한 기능은 없다 -->
 		<result property="grade" column="grade" />
 		<result property="losal" column="losal" />
 		<result property="hisal" column="hisal" />
 		<collection property="deptList" resultMap="deptMapQ"></collection>
 	</resultMap>
-	
+
 	<resultMap id="deptMapQ" type="DeptEmpVO">
 		<result property="deptno" column="deptno" />
 		<result property="dname" column="dname" />
 		<result property="loc" column="loc" />
 		<collection property="empList" resultMap="empMapQ"></collection>
 	</resultMap>
-	
- 	<resultMap id="empMapQ" type="EmpVO">
+
+	<resultMap id="empMapQ" type="EmpVO">
 		<result property="empno" column="empno" />
 		<result property="ename" column="ename" />
 		<result property="job" column="job" />
@@ -108,6 +110,96 @@
 		<result property="sal" column="sal" />
 		<result property="comm" column="comm" />
 		<result property="deptno" column="deptno" />
+	</resultMap>
+
+
+			<!-- emp dept 일대일 매핑 -->
+	<resultMap id="deptOneMap" type="DeptVO">
+		<result property="deptno" column="deptno" />
+		<result property="loc" column="loc" />
+		<result property="dname" column="dname" />
+	</resultMap>
+
+	<resultMap id="empDeptMap" type="EmpDeptVO">
+		<result property="empno" column="empno" />
+		<result property="ename" column="ename" />
+		<result property="job" column="job" />
+		<result property="mgr" column="mgr" />
+		<result property="hiredate" column="hiredate" />
+		<result property="sal" column="sal" />
+		<result property="comm" column="comm" />
+		<result property="deptno" column="deptno" />
+		<association property="dept" resultMap="deptOneMap"></association>
+	</resultMap>
+
+	<select id="getEmpOneDeptList" resultMap="empDeptMap">
+       <![CDATA[
+             select * from emp, dept where emp.deptno = dept.deptno
+        ]]>
+	</select>
+	
+	
+	
+	
+				<!-- sal emp 일대일 매핑 -->
+	<select id="getSalEmpList2" resultMap="empMap2">
+       <![CDATA[
+              select ename, sal, grade from emp, salgrade where sal between losal and hisal
+        ]]>
+	</select>			
+
+	<resultMap id="empMap2" type="EmpSalGradeVO">
+		<result property="empno" column="empno" />
+		<result property="ename" column="ename" />
+		<result property="job" column="job" />
+		<result property="mgr" column="mgr" />
+		<result property="hiredate" column="hiredate" />
+		<result property="sal" column="sal" />
+		<result property="comm" column="comm" />
+		<result property="deptno" column="deptno" />
+		<association property="salgrade" resultMap="salMap2"></association>
+	</resultMap>
+
+	<resultMap id="salMap2" type="SalGradeVO">
+		<result property="grade" column="grade" />
+		<result property="losal" column="losal" />
+		<result property="hisal" column="hisal" />
 	
 	</resultMap>
+	
+	
+	
+	
+					<!-- 일대일 매핑 -->
+	<select id="getEmpSalGradeList" resultMap="empMap3">
+       <![CDATA[
+               select * from emp e , dept d, salgrade s where e.deptno=d.deptno and sal between losal and hisal 
+        ]]>
+	</select>			
+
+	<resultMap id="empMap3" type="EmpSalGradeVO">
+		<result property="empno" column="empno" />
+		<result property="ename" column="ename" />
+		<result property="job" column="job" />
+		<result property="mgr" column="mgr" />
+		<result property="hiredate" column="hiredate" />
+		<result property="sal" column="sal" />
+		<result property="comm" column="comm" />
+		<result property="deptno" column="deptno" />
+		<association property="salgrade" resultMap="salMap3"></association>
+		<association property="dept" resultMap="deptMap3"></association>
+	</resultMap>
+
+	<resultMap id="salMap3" type="SalGradeVO">
+		<result property="grade" column="grade" />
+		<result property="losal" column="losal" />
+		<result property="hisal" column="hisal" />
+	</resultMap>
+	
+	<resultMap id="deptMap3" type="DeptVO">
+		<result property="deptno" column="deptno" />
+		<result property="dname" column="dname" />
+		<result property="loc" column="loc" />
+	</resultMap>
+	
 </mapper>
