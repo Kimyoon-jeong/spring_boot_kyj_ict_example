@@ -11,25 +11,21 @@
 <body>
 	<h1>emp 리스트7</h1>
 	<table width="50%" border="1">
-		<tr> <!-- 테이블의 상단에 들어갈 컬럼명들 -->
-	
+		<tr>
 			<td>사원이름</td>
 			<td>월급</td>
 			<td>부서번호</td>
 			<td>부서위치</td>
+			<td>부서이름</td>
 		</tr>
 
-		<c:forEach var="a" items="${empDeptSalList}">
+		<c:forEach var="vo" items="${empList}">
 			<tr>
-
-				
-				<td>${a.emp.ename}</td>
-				<td>${a.emp.sal}</td>
-				<td>${a.emp.deptno}</td>
-				<td>${a.dept.loc}</td>
-			
-
-			
+				<td>${vo.emp.ename}</td>
+				<td><fmt:formatNumber value="${vo.emp.sal}" type="number"/></td>
+				<td>${vo.emp.deptno}</td>
+				<td>${vo.dept.loc}</td>
+				<td>${vo.dept.dname}</td>
 			</tr>
 		</c:forEach>
 

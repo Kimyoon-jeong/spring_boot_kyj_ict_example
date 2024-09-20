@@ -95,6 +95,15 @@ public class EmpController {
 		return "emp/list5";
 	}
 	
+	@GetMapping("/list7")
+	public String list6(Model model) {
+		System.out.println("list7()..");
+		
+		model.addAttribute("empList", empService.getEmpDeptSalList());
+		
+		return "emp/list7";
+	}
+	
 	@GetMapping("/salgrade")
 	public String salgrade(Model model) {
 		System.out.println("salgrade()..");
@@ -104,14 +113,7 @@ public class EmpController {
 		return "emp/salgrade";
 	}
 	
-	@GetMapping("/list7")
-	public String list6(Model model) {
-		System.out.println("list7()..");
-		
-		model.addAttribute("empDeptSalList", empService.getEmpDeptSalList());
-		
-		return "emp/list7";
-	}
+
 	@GetMapping("/salgrade2")
 	public String salgrade2(Model model) {
 		System.out.println("salgrade2()..");
