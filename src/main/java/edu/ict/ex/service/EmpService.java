@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import edu.ict.ex.mapper.EmpMapper;
 import edu.ict.ex.page.Criteria;
 import edu.ict.ex.vo.DeptEmpVO;
+import edu.ict.ex.vo.EmpDeptSalgradeVO;
 import edu.ict.ex.vo.EmpDeptVO;
 import edu.ict.ex.vo.EmpVO;
 
@@ -87,5 +88,10 @@ public class EmpService {
 	public List<EmpSalGradeVO> getEmpSalGradeList() {
 		
 		return empMapper.getEmpSalGradeList();
+	}
+	
+	public List<EmpDeptSalgradeVO> getEmpDeptSalList() {
+		
+		return empMapper.getEmpDeptSalList();
 	}
 }

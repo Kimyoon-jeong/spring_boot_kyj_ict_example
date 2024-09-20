@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import edu.ict.ex.page.Criteria;
 import edu.ict.ex.vo.DeptEmpVO;
+import edu.ict.ex.vo.EmpDeptSalgradeVO;
 import edu.ict.ex.vo.EmpDeptVO;
 import edu.ict.ex.vo.EmpVO;
 
@@ -43,6 +44,9 @@ public interface EmpMapper {
 	public List<SalgradeDeptEmpVO> getSalDeptEmpList();
 
 	public List<EmpSalGradeVO> getEmpSalGradeList();
+	
+	//조인처리2
+	List<EmpDeptSalgradeVO>getEmpDeptSalList(); 
 	
 	
 	
