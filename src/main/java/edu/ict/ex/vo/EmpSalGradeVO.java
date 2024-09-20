@@ -14,6 +14,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class EmpSalGradeVO {
+
 	private int empno;
 	private String ename;
 	private String job;

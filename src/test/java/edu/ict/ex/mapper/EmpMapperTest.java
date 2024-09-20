@@ -77,7 +77,7 @@ class EmpMapperTest {
       emp.setEname("홍길동");
       emp.setJob("CLERK");
       emp.setMgr(7369);
-      emp.setHiredate2("2024-09-24");
+     // emp.setHiredate2("2024-09-24");
       emp.setComm(800);
       emp.setSal(2000);
       emp.setDeptno(10);

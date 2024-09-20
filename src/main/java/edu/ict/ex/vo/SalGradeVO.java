@@ -20,6 +20,6 @@ public class SalGradeVO {
 	private int losal;
 	private int hisal;
 	
-	private List<EmpVO> empList; 
+//	private List<EmpVO> empList; 
 
 }
