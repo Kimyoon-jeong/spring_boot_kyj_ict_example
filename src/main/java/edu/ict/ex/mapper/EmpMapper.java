@@ -9,11 +9,15 @@ import edu.ict.ex.vo.DeptEmpVO;
 
 import edu.ict.ex.vo.EmpVO;
 
+import edu.ict.ex.vo.SalGradeVO;
+import edu.ict.ex.vo.SalgradeDeptEmpVO;
+
 
 
 //마이바티스용 인터페이스라는걸 알려주는 애노테이션
 @Mapper
 public interface EmpMapper {
+	
 	
 	public List<EmpVO>getList();
 	
@@ -23,9 +27,13 @@ public interface EmpMapper {
 	
 	public List <DeptEmpVO>getDeptEmpList(); //조인처리 두번째 방법
 	
+	List<SalGradeVO> getSalEmpList();
+	
 	//페이징관련
 	int getTotalCount();
 	List<EmpVO> getListWithPaging(Criteria cri);
+
+	public List<SalgradeDeptEmpVO> getSalDeptEmpList();
 	
 	
 	

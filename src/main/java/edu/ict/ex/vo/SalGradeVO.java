@@ -1,5 +1,6 @@
 package edu.ict.ex.vo;
 
+import java.sql.Date;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -13,12 +14,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class DeptEmpVO {
-	private int deptno;
-	private String dname;
-	private String loc;
-	
-	private List<EmpVO> empList; //1대 다
-	
+public class SalGradeVO {
 
+	private int grade;
+	private int losal;
+	private int hisal;
+	
+	private List<EmpVO> empList; 
 }
