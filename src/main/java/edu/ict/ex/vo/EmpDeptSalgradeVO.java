@@ -18,4 +18,7 @@ public class EmpDeptSalgradeVO {
 	private SalGradeVO salgrade;
 	private DeptVO dept;
 	
+	   public int getRandImgNum() {
+		      return (int)(Math.random()*6) + 1;
+		   }
 }
