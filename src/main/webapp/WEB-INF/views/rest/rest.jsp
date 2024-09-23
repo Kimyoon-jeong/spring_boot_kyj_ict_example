@@ -7,31 +7,41 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="${pageContext.request.contextPath}/js/board.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function(){
 		
-		function list(){
-			$.ajax({
-				type:"GET",
-				url: "${pageContext.request.contextPath}/boards/list",
-				success: function name(result){
-				console.log(result);
-				},
-			error: function(e){
-				console.log(e);
-				}
-			});
+		let board = boardService();
+
+		//board.list();
+		
+		//board.get(4000);
+		
+		let hey ={
+				bname : "히히",
+				bcontent : "히히하오",
+				btitle : "헤이~"
+		}
+		//board.add(hey);
+		//board.del(4066);
+		
+		let upd ={
+				bid :"3064", 
+				bname : "첫번째",
+				bcontent : "컨텐츠",
+				btitle : "두둥!"
 		}
 		
-		list();
+		
+		board.update(upd);
 		
 	});
-
-	
 </script>
+
+
 </head>
 <body>
 	<h1>Restful 게시판 연습</h1>
