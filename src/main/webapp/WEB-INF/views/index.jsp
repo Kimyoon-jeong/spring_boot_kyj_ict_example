@@ -600,7 +600,6 @@
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                  </div>
                                  
-                              </div>
                            </div>
                         </div>
                         <div class="col-sm-3">

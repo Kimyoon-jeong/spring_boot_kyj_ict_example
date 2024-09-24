@@ -28,15 +28,15 @@
 		//board.add(hey);
 		//board.del(4066);
 		
-		let upd ={
+		let modifyObj ={
 				bid :"3064", 
-				bname : "첫번째",
-				bcontent : "컨텐츠",
-				btitle : "두둥!"
+				bname : "오늘은",
+				bcontent : "갱",
+				btitle : "화요일!"
 		}
 		
 		
-		board.update(upd);
+		board.modify(modifyObj);
 		
 	});
 </script>

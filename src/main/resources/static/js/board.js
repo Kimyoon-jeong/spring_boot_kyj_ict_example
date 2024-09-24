@@ -69,14 +69,14 @@ let boardService = function() {
 			});
 		}
 
-	function update(board) {
+	function modify(board) {
 				$.ajax({
 					type: "PUT",
 					url: "/boards/",
 					contentType:'application/json; charset=utf-8',
 					data: JSON.stringify(board),
 					success: function(result) {
-						console.log("업데이트된 갯수" + result);
+						console.log("수정된 갯수" + result);
 					},
 					error: function(e) {
 						console.log(e);
@@ -88,7 +88,7 @@ let boardService = function() {
 		get : get,
 		add : add,
 		del : del,
-		update:update
+		modify : modify
 
 	}
 

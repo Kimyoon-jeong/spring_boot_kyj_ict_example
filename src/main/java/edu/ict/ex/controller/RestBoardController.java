@@ -92,7 +92,7 @@ public class RestBoardController {
 		log.info("write");
 		log.info("board" + board);
 		
-		ResponseEntity<String>entity=null;
+		ResponseEntity<String> entity=null;
 		
 		try {
 			boardService.writeBoard(board);
@@ -114,7 +114,7 @@ public class RestBoardController {
 		
 		try {
 			int rn=boardService.remove(board.getBid());
-			boardService.remove(board.getBid());
+			
 			//삭제가 성공하면 삭제된 갯수 출력
 			log.info("delete 넘어온 숫자::" + rn);
 			entity=new ResponseEntity<String>(String.valueOf(rn),HttpStatus.OK);
@@ -127,21 +127,19 @@ public class RestBoardController {
 		return entity;
 	}
 	@PutMapping("/") 
-	public ResponseEntity<String> update(@RequestBody BoardVO board){
-		log.info("update");
+	public ResponseEntity<String> modify(@RequestBody BoardVO board){
+		log.info("modify");
 		log.info("board" + board);
 		
 		ResponseEntity<String>entity=null;
 		
 		try {
 			int rn=boardService.updateBoard(board);
-			boardService.updateBoard(board);
-			//삭제가 성공하면 삭제된 갯수 출력
-			log.info("delete 넘어온 숫자::" + rn);
+			
 			entity=new ResponseEntity<String>(String.valueOf(rn),HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
-			//삭제가 실패하면 실패 상태메시지 저장
+			
 			entity = new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 
