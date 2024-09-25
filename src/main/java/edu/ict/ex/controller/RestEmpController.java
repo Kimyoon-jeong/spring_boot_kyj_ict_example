@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 
 
 //RestController 란 기존의 controller의 속성하고는 다름
-@Slf4j
+
 @RestController
 @RequestMapping("/emps")
 public class RestEmpController {
@@ -40,24 +40,21 @@ public class RestEmpController {
 	//자바객체를 json으로 바꿔서 서비스 하고있음
 	@GetMapping("/list")
 	public List<EmpVO>list(){
-		log.info("list()..");
-		
+
 		return empService.getList();
 	}
 
 
 	@DeleteMapping("/{empno}") 
 	public ResponseEntity<String> delete(EmpVO emp){
-		log.info("delete");
-		log.info("board" + emp);
+
 		
 		ResponseEntity<String>entity=null;
 		
 		try {
 			int rn=empService.remove(emp.getEmpno());
 			
-			//삭제가 성공하면 삭제된 갯수 출력
-			log.info("delete 넘어온 숫자::" + rn);
+
 			entity=new ResponseEntity<String>(String.valueOf(rn),HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
