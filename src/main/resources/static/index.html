@@ -401,6 +401,9 @@ $(document).ready(function(){
               $("#f-items").append(pCard);   /*    f-items 부모 */
               
               
+              const random = Math.floor(Math.random() * 6)+1;
+              $(pCard).find('.productinfo').find('img').attr("src","images/home/product"+random+".jpg");
+              
            });      
            
         },
