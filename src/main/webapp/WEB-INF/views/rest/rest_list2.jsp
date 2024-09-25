@@ -39,15 +39,15 @@ $(document).ready(function(){
          htmls += '<tr>';
          htmls += '<td>'+ this.bid + '</td>'; 
          htmls += '<td>'+ this.bname + '</td>';
-            htmls += '<td>'
+         htmls += '<td>'
          for(let i=0;i< this.bindent;i++){
             htmls += '-'
          }
-            htmls += '<a href="/rest_content_view.html?bid=' + this.bid + '">' + this.btitle + '</a></td>';
+         htmls += '<a href="/rest_content_view.html?bid=' + this.bid + '">' + this.btitle + '</a></td>';
          htmls += '<td>'+ this.bdate + '</td>'; 
          htmls += '<td>'+ this.bhit + '</td>';
-            htmls += '<td>'+ '<input id=' + this.bid + " type='button' class='btn_delete' value='삭제'>" + '</td>';
-            htmls += '</tr>';         
+         htmls += '<td>'+ '<input id=' + this.bid + " type='button' class='btn_delete' value='삭제'>" + '</td>';
+         htmls += '</tr>';         
          
       }); //each end
       

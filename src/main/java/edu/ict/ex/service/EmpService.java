@@ -94,4 +94,11 @@ public class EmpService {
 		
 		return empMapper.getEmpDeptSalList();
 	}
+	
+	
+	public int remove(int empno) {
+	
+		return empMapper.delete(empno);
+		
+	}
 }

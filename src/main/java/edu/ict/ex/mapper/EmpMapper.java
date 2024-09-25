@@ -46,7 +46,9 @@ public interface EmpMapper {
 	public List<EmpSalGradeVO> getEmpSalGradeList();
 	
 	//조인처리2
-	List<EmpDeptSalgradeVO>getEmpDeptSalList(); 
+	List<EmpDeptSalgradeVO>getEmpDeptSalList();
+
+	public int delete(int empno); 
 	
 	
 	

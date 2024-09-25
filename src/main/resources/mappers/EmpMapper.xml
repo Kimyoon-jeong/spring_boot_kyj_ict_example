@@ -17,6 +17,12 @@
            select count(*) from emp
         ]]>
 	</select>
+	
+	<delete id="delete">
+   	 <![CDATA[
+        delete from emp where empno=#{empno}
+     ]]>
+	</delete>
 
 	<select id="getListWithPaging" resultType="EmpVO">
        <![CDATA[
