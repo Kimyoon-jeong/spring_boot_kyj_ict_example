@@ -35,7 +35,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .antMatchers("/boards/**").hasAnyRole("ADMIN")
       .antMatchers("/**").permitAll(); //위에2줄외에는 모든사람이 접속할 수 있다는 뜻
 
-        http.formLogin(); //스프링 시큐리티에 있는 기본 로그인 폼을 사용하겠다.
+      //로그인 폼 커스텀 마이징
+      http.formLogin()
+         .loginPage("/login")  //loginPage() 는 말그대로 로그인할 페이지 url 이고
+          .usernameParameter("id") //=jsp name
+          .passwordParameter("pw")
+          .defaultSuccessUrl("/");
+        
+     // .defaultSuccessUrl("/board/list");
+
+        
+      
       
    }
    
