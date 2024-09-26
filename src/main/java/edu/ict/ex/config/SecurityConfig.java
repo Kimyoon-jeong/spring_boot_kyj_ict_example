@@ -23,6 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       //web.ignoring().antMatchers("/css/**", "/js/**", "/img/**", "/lib/**");
    }
    
+   //권한설정
    @Override
    protected void configure(HttpSecurity http) throws Exception {
         //우선 CSRF설정을 해제한다.
@@ -38,12 +39,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       
    }
    
-   //권한설정
+
    @Override
    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
        
       auth.inMemoryAuthentication()
-           .withUser("user").password("{noop}user").roles("USER").and()
+           .withUser("user").password("{noop}user").roles("USER").
+           and()
            .withUser("admin").password("{noop}admin").roles("ADMIN");
    
    }
