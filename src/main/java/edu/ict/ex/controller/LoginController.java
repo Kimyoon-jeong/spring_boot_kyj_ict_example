@@ -15,13 +15,13 @@ public class LoginController {
 	public String login(Model model) {
 		log.info("login()..");
 
-		return "login/login";
-	}
-
-	@GetMapping("/login2")
-	public String login2(Model model) {
-		log.info("login2()..");
-
 		return "login/login2";
 	}
+
+//	@GetMapping("/login2")
+//	public String login2(Model model) {
+//		log.info("login2()..");
+//
+//		return "login/login2";
+//	}
 }
