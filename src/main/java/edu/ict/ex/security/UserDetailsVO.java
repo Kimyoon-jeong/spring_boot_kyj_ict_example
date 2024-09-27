@@ -22,6 +22,7 @@ public class UserDetailsVO implements UserDetails{
 	private String username;
 	private String password;
 	private List<GrantedAuthority>authorities;
+	private String email;
 	
 	private CartVO cart;
 	
@@ -29,6 +30,7 @@ public class UserDetailsVO implements UserDetails{
 		this.setUsername(user.getUsername());
 		this.setPassword(user.getPassword());
 		this.setAuthorities(user);
+		this.setEmail(user.getEmail());
 	}
 	
 	
@@ -36,7 +38,7 @@ public class UserDetailsVO implements UserDetails{
 		this.setUsername(user.getUsername());
 		this.setPassword(user.getPassword());
 		this.setAuthorities(user);
-		
+		this.setEmail(user.getEmail());
 		this.cart=cart;
 	}
 	
@@ -44,6 +46,9 @@ public class UserDetailsVO implements UserDetails{
 		return cart;
 	}
 	
+	public String getEmail() {
+		return email;
+	}
 	
 	//UserVO에서 권한을 추출하여 UserDetails에서 요구하는 권한 형식으로 만들어줌
 	public void setAuthorities(UserVO userVO) {

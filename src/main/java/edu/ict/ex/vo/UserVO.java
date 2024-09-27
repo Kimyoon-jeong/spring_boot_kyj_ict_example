@@ -29,4 +29,6 @@ public class UserVO {
 	
 	private List<AuthVO>authList;
 	
+	private String email="abcd@daum.net";
+	
 }
