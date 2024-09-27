@@ -16,13 +16,13 @@ public class ShopController {
 	@Autowired
 	private EmpService empService;
 	
-	@GetMapping("/")
-	public String shop(Model model) {
-		System.out.println("shop()..");
-		
-		model.addAttribute("empList", empService.getEmpDeptSalList());
-		
-		return "index";
-	}
-	
+//	@GetMapping("/")
+//	public String shop(Model model) {
+//		System.out.println("shop()..");
+//		
+//		model.addAttribute("empList", empService.getEmpDeptSalList());
+//		
+//		return "index";
+//	}
+//	
 }
