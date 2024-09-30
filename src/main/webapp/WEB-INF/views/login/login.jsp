@@ -13,7 +13,7 @@
 
 <c:url value="/login" var="loginUrl" />
 <p>${loginUrl}</p>
-<form:form name="f" action="${loginUrl}" method="POST">
+<form:form name="f" action="${loginUrl}" method="POST"> <!--  form:form 스프링에서 사용하는 폼을 쓰겠다는 뜻  -->
      <!--  http://localhost:8282/login?error -->
     <c:if test="${param.error != null}">         
         <p>아이디와 비밀번호가 잘못되었습니다.</p>
@@ -29,7 +29,7 @@
         <label for="password">비밀번호</label>
         <input type="password" id="password" name="pw"/>
     </p>
-    <%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
+  <%--  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />  --%>
     <button type="submit" class="btn">로그인</button>
 </form:form>
 
