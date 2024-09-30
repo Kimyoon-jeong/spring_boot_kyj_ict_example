@@ -39,12 +39,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    protected void configure(HttpSecurity http) throws Exception {
         //우선 CSRF설정을 해제한다.
         //초기 개발시만 해주는게 좋다.
-        //http.csrf(csrf -> csrf.disable());
+        http.csrf(csrf -> csrf.disable());
       
       http.authorizeHttpRequests()
-      .antMatchers("/board/**").hasAnyRole("USER") 
-      .antMatchers("/boards/**").hasAnyRole("ADMIN")
-      .antMatchers("/**").permitAll(); //위에2줄외에는 모든사람이 접속할 수 있다는 뜻
+      .antMatchers("/**")
+      .permitAll(); //위에2줄외에는 모든사람이 접속할 수 있다는 뜻
 
       //로그인 폼 커스텀 마이징
       http.formLogin()
