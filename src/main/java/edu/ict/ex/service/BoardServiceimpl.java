@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import edu.ict.ex.mapper.BoardMapper;
 import edu.ict.ex.page.Criteria;
 import edu.ict.ex.vo.BoardVO;
@@ -58,7 +60,7 @@ public class BoardServiceimpl implements BoardService {
 		return boardMapper.updateBoard(board);
 		
 	}
-
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public void writeReply(BoardVO board) {
 		log.info("writeReply()..");
